@@ -1,0 +1,123 @@
+:root {
+    --header-height: 120px;
+    --background-blur: 50px;
+}
+
+body {
+    margin: 0;
+    overflow: hidden auto;
+
+    background: #101010;
+    color: #ffffff;
+}
+
+*::selection {
+    color: black;
+    background-color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    width: calc(100% - 2 * 80px);
+    height: var(--header-height);
+
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+
+    background: linear-gradient(#00000000, #000000b0);
+    border-bottom: 1px solid #5c5c5c;
+
+    cursor: default;
+}
+
+header>.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    width: max-content;
+}
+
+header>.card>img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+}
+
+header>.card>span {
+    font-size: 48px;
+    font-family: "Lexend";
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+header>.navigation {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: end;
+}
+
+header>.navigation>.header_redirect {
+    width: 100%;
+
+    padding: 5px 10px;
+    box-sizing: border-box;
+    
+    background: linear-gradient(#00000000, #80808080);
+    color: #ffffff;
+    
+    font-size: 24px;
+    font-family: "Lexend";
+    font-weight: 300;
+    text-transform: capitalize;
+    text-align: center;
+    
+    cursor: pointer;
+
+    transition-duration: 300ms;
+}
+
+header>.navigation>.header_redirect:hover {
+    background: #80808080
+}
+
+header>.navigation>.header_redirect.active {
+    background: linear-gradient(#ffffff);
+    color: #000000;
+}
+
+footer {
+    height: 0px;
+}
+
+canvas {
+    display: block;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    
+    filter: blur(var(--background-blur));
+}
+
+
+section {
+    height: 0;
+
+    overflow: hidden;
+    
+    transition-duration: 300ms;
+}
+
+section.active {
+    display: block;
+    
+    height: max-content;
+}
