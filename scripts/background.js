@@ -5,7 +5,8 @@ CANVAS.height = window.innerHeight;
 const ctx = CANVAS.getContext('2d');
 
 // Min and max values for the circle count
-const circlesCountRange = [15 * Math.round(CANVAS.width / 1500), 50 * Math.round(CANVAS.width / 1500)];
+const circlesCountDensityBounds = {min: 10, max: 20}; // For a 1000 * 1000 canvas
+const circlesCountRange = [Math.round(circlesCountDensityBounds.min * CANVAS.width / 1000), Math.round(circlesCountDensityBounds.max * CANVAS.width / 1000)];
 
 // Circle list
 const Circles = new Map();
@@ -42,7 +43,7 @@ class Circle {
         ctx.fill();
     }
 
-    // Update the position of the balls
+    // Update the direction, position, and color of the circle
     update() {
         // Direction is adjusted between -orientationReplacementRange and +orientationReplacementRange degrees
         this.direction += ((Math.random() * 2 * this.orientationReplacementRange - this.orientationReplacementRange) * (Math.PI * 2 / 360)) % (Math.PI * 2);
