@@ -13,6 +13,8 @@ body {
 
     background: #101010;
     color: #ffffff;
+
+    font-family: "Lexend";
 }
 
 *::selection {
@@ -57,7 +59,6 @@ header>.card>img {
 
 header>.card>span {
     font-size: 48px;
-    font-family: "Lexend";
     font-weight: 700;
     text-transform: capitalize;
 }
@@ -79,7 +80,6 @@ header>.navigation>.header_redirect {
     color: #ffffff;
 
     font-size: 24px;
-    font-family: "Lexend";
     font-weight: 300;
     text-transform: capitalize;
     text-align: center;
@@ -118,8 +118,11 @@ section {
 
     overflow: hidden;
 
+    background: #00000080;
+
     transition-duration: 300ms;
 }
+
 
 section.active {
     display: block;
@@ -128,23 +131,27 @@ section.active {
 }
 
 /* Laptop CSS tweaks */
-@media (max-width: 1024px) { /* var(--screen-laptop-max-width) */
+@media (max-width: 1024px) {
+
+    /* var(--screen-laptop-max-width) */
     header {
         width: 100%;
     }
-    
+
     header>.navigation {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
     }
-    
+
     header>.navigation>.header_redirect {
         background: linear-gradient(0.25turn, #00000000, #80808080);
     }
 }
 
 /* Phone CSS tweaks */
-@media (max-width: 768px) { /* var(--screen-phone-max-width) */
+@media (max-width: 768px) {
+
+    /* var(--screen-phone-max-width) */
     header>.navigation {
         width: 100%;
     }
